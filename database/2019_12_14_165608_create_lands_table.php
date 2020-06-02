@@ -1,0 +1,42 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateLandsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('lands', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('type');
+            $table->string('country');
+            $table->string('state');
+            $table->string('city');
+            $table->string('title');
+            $table->string('desc');
+            $table->string('price');
+            $table->string('area');  
+            $table->string('unit');
+            $table->string('image');
+
+            $table->timestamps();
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('lands');
+    }
+}
